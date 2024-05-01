@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    border-width:1px;
+    border-color: red;
+}
+.horizontal-div {
+    flex:1;
+}
+.vertical-div {
+    flex: 1;
+    aspect-ratio: 1;
+}
