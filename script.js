@@ -1,9 +1,16 @@
 const container = document.querySelector(".container");
 const resetButton = document.querySelector("#amountOfGrids");
-const amountOfGridsInput = document.querySelector("#amountOfGridsInput");
+// const amountOfGridsInput = document.querySelector("#amountOfGridsInput");
 
 
-
+const generateRandomColor = function(){
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    let valueToReturn = `rgb(${red}, ${green}, ${blue})`;
+    console.log(valueToReturn);
+    return valueToReturn.toString();
+}
 
 const createGrid = function(gridSize) {
     if (gridSize >= 100){
@@ -16,7 +23,8 @@ const createGrid = function(gridSize) {
             verticalDiv.setAttribute("class", "vertical-div");
             // verticalDiv.textContent = "Hello";
             verticalDiv.addEventListener("mouseenter", function(e) {
-                e.target.style.backgroundColor = "black";
+                // e.target.style.backgroundColor = "black";
+                e.target.style.backgroundColor = generateRandomColor();
             });
             horizontalDiv.appendChild(verticalDiv);
         }
@@ -31,7 +39,12 @@ const resetGrid = function(){
     }
 }
 const updateGrid = function(){
-    let number = amountOfGridsInput.value;
+    // let number = amountOfGridsInput.value;
+    let gridSize = prompt("What size would you like your grid to be? (max: 100)");
+    if (isNaN(gridSize) || gridSize >99 || gridSize == null || gridSize == ""){
+         updateGrid();
+    }
+    number = gridSize;
     resetGrid();
     createGrid(number);
 }
