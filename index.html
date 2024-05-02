@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch N Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+        display: flex;
+        border-width:1px;
+        border-color: red;
+    }
+    .horizontal-div {
+        flex:1;
+    }
+    .vertical-div {
+        flex: 1;
+        aspect-ratio: 16/8;
+    }
+    #button-holder{
+        display: flex;
+        justify-content: center;
+    }
+    button {
+        display: flex;
+        justify-content: center;
+        font-weight: 800;
+    }
+    </style>
 </head>
 <body>
     <div id="button-holder">
