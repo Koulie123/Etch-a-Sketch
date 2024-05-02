@@ -8,5 +8,5 @@
 }
 .vertical-div {
     flex: 1;
-    aspect-ratio: 1;
+    aspect-ratio: 16/8;
 }
